@@ -1,0 +1,35 @@
+body{
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+
+
+p{
+    font-style: italic;
+}
+.button-choice, .button-couleurs, .button-notes{
+    margin : 3%;
+}
+
+table{
+    width: 50%;
+    margin: 0 auto;
+    border : 2px solid;
+    border-spacing : 0;
+}
+td{
+    height : 20px;
+    border : 1px solid;
+    width : 50%;
+}
+.title-table{
+    font-weight: bold;
+}
+input{
+    width : 50%;
+}
+.couleurs{
+    background-color: green;
+    color:transparent;
+}
