@@ -38,7 +38,7 @@ button1.addEventListener("click", () => {
 });
 
 //Définir les chiffres autorisés dans l'input
-const regex=/^[1-4;&;é;";']$/
+const regex=/^[1\-4&é"']$/
 const regex2=/^[1-5]$/
 inputNote.forEach(inputNote => {
     inputNote.addEventListener("input", () => {
@@ -59,7 +59,7 @@ inputNote.forEach(inputNote => {
             const isValid=regex.test(inputNote.value);
             if (isValid){
                 //choix background selon note
-                inputNote.style.backgroundColor =`${inputNote.value =="1" ? "red":inputNote.value =="&" ? "red":inputNote.value =="2" ? "orange":inputNote.value =="é" ? "orange": inputNote.value == "3" ? "yellow" :inputNote.value =="\"" ? "yellow": "green"}`;
+                inputNote.style.backgroundColor =`${inputNote.value =="1"||inputNote.value =="&" ? "red":inputNote.value =="2"||inputNote.value =="é" ? "orange": inputNote.value == "3"||inputNote.value =="\""? "yellow": "green"}`;
                 
                 //passer le focus sur le prochain input (au cousin éloigné)
                 const uncleElement = inputNote.parentElement.parentElement.nextElementSibling

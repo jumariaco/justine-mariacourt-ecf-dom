@@ -28,6 +28,7 @@ td{
 }
 input{
     width : 50%;
+    text-align: center;
 }
 .couleurs{
     background-color: green;
