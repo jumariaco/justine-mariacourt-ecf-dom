@@ -1,5 +1,3 @@
-//Fonction du changement de case lors du choix couleurs
-
 //Evènement lors du clic du bouton de choix de mode
 const inputNote=document.querySelectorAll(".input-note");
 const button1 =document.querySelector("button");
@@ -23,7 +21,6 @@ button1.addEventListener("click", () => {
         default:
                 button1.classList.toggle("button-notes");
                 button1.classList.toggle("button-couleurs");
-                //a la fin voir pr effacer les classes ci-dessus et changer fonctin dessous pour inputnotclasslist contains..
                 button1.innerHTML =`Passer en mode ${button1.classList.contains("button-notes") ? "Couleurs" : "Notes"}`;
                 inputNote.forEach(inputNote => {
                         //switch entre les classes notes et couleurs (=>personnalisation du contenu de l'input)
@@ -33,30 +30,9 @@ button1.addEventListener("click", () => {
                          inputNote.removeAttribute("style", "background-color");
                          //efface la valeur/note entrée lors du changement de mode de notation
                          inputNote.value="";
-                         //efface les couleurs à prévoir???
                          //le focus sera automatiquement sur le 1er input
                          document.querySelector(".input-note").focus();
                        });
-
-        // case button1.classList.contains ("button-notes"):
-        //     button1.classList.replace("button-notes","button-couleurs");
-        //     button1.innerHTML =`Passer en mode Notes`;
-        //     inputNote.forEach(inputNote => {
-        //         inputNote.classList.replace("notes","couleurs")
-        //         //le focus sera automatiquement sur le 1er input
-        //         document.querySelector(".input-note").focus();
-        //     });
-        //     break;
-        // case button1.classList.contains ("button-couleurs"):
-        //     alert("couleurs 1 a 4");
-        //     button1.classList.replace("button-couleurs", "button-notes");
-        //     button1.innerHTML=`Passer en mode Couleurs`;
-        //     inputNote.forEach(inputNote =>{
-        //         inputNote.classList.replace("couleurs","notes")
-        //         //le focus sera automatiquement sur le 1er input
-        //         document.querySelector(".input-note").focus();
-        //     });
-        //     break;
     }
     
 });
@@ -71,12 +47,10 @@ inputNote.forEach(inputNote => {
             const isValid2=regex2.test(inputNote.value);
             if (isValid2){
                 alert("ok");
-                 //dire de passer au cousin
-                 //essayer de prévoir une fonction sinon ne pas distinguer les classes sf pr la couleur(regeX?)
+                 //passer le focus sur le prochain input (au cousin éloigné)
                 const uncleElement = inputNote.parentElement.parentElement.nextElementSibling
                 const Cousin = uncleElement.lastElementChild.lastElementChild;
                 Cousin.focus();
-                // Cousin.setAttribute("style","background-color:purple");
             }else {
                  alert ("Veuillez entrer un chiffre situé entre 1 et 5.");
                 inputNote.value="";
@@ -87,10 +61,9 @@ inputNote.forEach(inputNote => {
             if (isValid){
                 alert("ok");
                 //choix background selon note
-                //finir d'adapter les symboles
                 inputNote.style.backgroundColor =`${inputNote.value =="1" ? "red":inputNote.value =="&" ? "red":inputNote.value =="2" ? "orange":inputNote.value =="é" ? "orange": inputNote.value == "3" ? "yellow" :inputNote.value =="\"" ? "yellow": "green"}`;
                 
-                //dire de passer au cousin
+                //passer le focus sur le prochain input (au cousin éloigné)
                 const uncleElement = inputNote.parentElement.parentElement.nextElementSibling
                 const Cousin = uncleElement.lastElementChild.lastElementChild;
                 Cousin.focus();
