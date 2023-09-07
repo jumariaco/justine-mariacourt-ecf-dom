@@ -46,7 +46,6 @@ inputNote.forEach(inputNote => {
         if (inputNote.classList.contains ("notes")){
             const isValid2=regex2.test(inputNote.value);
             if (isValid2){
-                alert("ok");
                  //passer le focus sur le prochain input (au cousin éloigné)
                 const uncleElement = inputNote.parentElement.parentElement.nextElementSibling
                 const Cousin = uncleElement.lastElementChild.lastElementChild;
@@ -59,7 +58,6 @@ inputNote.forEach(inputNote => {
          if (inputNote.classList.contains ("couleurs")){
             const isValid=regex.test(inputNote.value);
             if (isValid){
-                alert("ok");
                 //choix background selon note
                 inputNote.style.backgroundColor =`${inputNote.value =="1" ? "red":inputNote.value =="&" ? "red":inputNote.value =="2" ? "orange":inputNote.value =="é" ? "orange": inputNote.value == "3" ? "yellow" :inputNote.value =="\"" ? "yellow": "green"}`;
                 
